@@ -9,11 +9,11 @@ WWW::AtMovies::TV - retrieve TV information from http://www.atmovies.com.tw/
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-use version; our $VERSION = qv('0.01');
+use version; our $VERSION = qv('0.02');
 my $base_url = 'http://app.atmovies.com.tw/tv/attv.cfm?action=showtime&groupid=M';
 
 has 'content' => ( is => 'rw', isa => 'Str'     );
@@ -102,7 +102,11 @@ retrieve "now on" information
 
 =cut
 
-sub now { return shift->data->{now} }
+sub now { 
+    my $self = shift;
+    my $return = $self->data->{now};
+    return wantarray ? %{$return} : $return;
+}
 
 =head2 next
 
@@ -110,7 +114,11 @@ retrieve "next on" information
 
 =cut
 
-sub next { return shift->data->{next} }
+sub next { 
+    my $self = shift;
+    my $return = $self->data->{next};
+    return wantarray ? %{$return} : $return;
+}
 
 =head1 AUTHOR
 
@@ -118,12 +126,7 @@ Alec Chen, C<< <alec at cpan.org> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-www-atmovies-tv at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-AtMovies-TV>.  I will be notified, and then you'll
-automatically be notified of progress on your bug as I make changes.
-
-
-
+Please report any bugs or feature requests to C<bug-www-atmovies-tv at rt.cpan.org>, or through the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=WWW-AtMovies-TV>.  I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
 =head1 SUPPORT
 
@@ -154,17 +157,13 @@ L<http://search.cpan.org/dist/WWW-AtMovies-TV>
 
 =back
 
-
 =head1 ACKNOWLEDGEMENTS
-
 
 =head1 COPYRIGHT & LICENSE
 
 Copyright 2008 Alec Chen, all rights reserved.
 
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
-
+This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
 
 =cut
 

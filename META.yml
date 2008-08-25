@@ -1,6 +1,6 @@
 ---
 name: WWW-AtMovies-TV
-version: v0.01
+version: v0.02
 author:
   - 'Alec Chen <alec@cpan.org>'
 abstract: retrieve TV information from http://www.atmovies.com.tw/
@@ -16,7 +16,7 @@ build_requires:
 provides:
   WWW::AtMovies::TV:
     file: lib/WWW/AtMovies/TV.pm
-    version: v0.01
+    version: v0.02
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
