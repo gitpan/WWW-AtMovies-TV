@@ -9,11 +9,11 @@ WWW::AtMovies::TV - retrieve TV information from http://www.atmovies.com.tw/
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-use version; our $VERSION = qv('0.02');
+use version; our $VERSION = qv('0.03');
 my $base_url = 'http://app.atmovies.com.tw/tv/attv.cfm?action=showtime&groupid=M';
 
 has 'content' => ( is => 'rw', isa => 'Str'     );
