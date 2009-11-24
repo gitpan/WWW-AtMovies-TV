@@ -14,7 +14,7 @@ Version 0.04
 
 =cut
 
-use version; our $VERSION = qv('0.04');
+our $VERSION = '0.04';
 my $base_url = 'http://tv.atmovies.com.tw/tv/attv.cfm?action=showtime&groupid=M';
 
 has 'content' => ( is => 'rw', isa => 'Str'     );
